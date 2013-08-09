@@ -132,13 +132,13 @@ Default is on.
 
 =head1 METHODS
 
-=head3 serialize
+=head2 serialize
 
     my $serialized = $dss->serialize($deserialized);
 
 SerializesE<sol>flattens a ref.  Returns a serialized hashref of pathE<sol>value pairs.
 
-=head3 serialize_refpath
+=head2 serialize_refpath
 
     my $serialized = $dss->serialize_refpath($path_prefix, $deserialized);
  
@@ -148,7 +148,7 @@ SerializesE<sol>flattens a ref.  Returns a serialized hashref of pathE<sol>value
 The real workhorse for C<<< serialize_ref >>>.  Recursively dives down the different pieces of the deserialized tree and eventually comes
 back with the serialized hashref.  The path prefix can be used for prepending all of the paths returned in the serialized hashref.
 
-=head3 deserialize
+=head2 deserialize
 
     my $deserialized = $dss->deserialize($serialized);
 
@@ -168,27 +168,27 @@ For example:
        { thingy => 2 },
     ];
 
-=head3 deserialize_pathval
+=head2 deserialize_pathval
 
     my $deserialized = $dss->deserialize_pathval($path, $value);
 
 DeserializesE<sol>expands a single pathE<sol>data pair.  Returns the expanded object.
 
-=head3 merge
+=head2 merge
 
     my $newhash = $dss->merge($hash1, $hash2);
 
 Merges two hashes.  This is a direct handle to C<<< merge >>> from an (internal) L<Hash::Merge> object, and is used by L</deserialize> to
 combine individual expanded objects.
 
-=head3 set_merge_behavior
+=head2 set_merge_behavior
 
 Handle to C<<< set_behavior >>> from the (internal) L<Hash::Merge> object.  B<Advanced usage only!>
 
 Data::SplitSerializer uses a special custom type called C<<< LEFT_PRECEDENT_STRICT_ARRAY_INDEX >>>, which properly handles array
 indexes and dies on any non-array-or-hash refs.
 
-=head3 specify_merge_behavior
+=head2 specify_merge_behavior
 
 Handle to C<<< specify_behavior >>> from the (internal) L<Hash::Merge> object.  B<Advanced usage only!>
 
