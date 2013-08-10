@@ -23,11 +23,12 @@ no_index:
 provides:
   Data::SplitSerializer:
     file: lib/Data/SplitSerializer.pm
-    version: 0.90
+    version: 0.91
 requires:
   Hash::Merge: 0.11
   Module::Runtime: 0.006
   Moo: 0.009001
+  Parse::Path: 0.90
   Try::Tiny: 0.01
   Types::Standard: 0.001
   namespace::clean: 0.06
@@ -38,7 +39,7 @@ resources:
   bugtracker: https://github.com/SineSwiper/Data-SplitSerializer/issues
   homepage: https://github.com/SineSwiper/Data-SplitSerializer/wiki
   repository: git://github.com/SineSwiper/Data-SplitSerializer.git
-version: 0.90
+version: 0.91
 x_Dist_Zilla:
   perl:
     version: 5.014002
@@ -277,6 +278,14 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::Clean
       name: '@Author::BBYRD/Clean'
       version: 0.07
+    -
+      class: Dist::Zilla::Plugin::Prereqs
+      config:
+        Dist::Zilla::Plugin::Prereqs:
+          phase: runtime
+          type: requires
+      name: RuntimeRequires
+      version: 4.300035
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'

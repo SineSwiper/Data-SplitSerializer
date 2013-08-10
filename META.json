@@ -34,6 +34,7 @@
             "Hash::Merge" : "0.11",
             "Module::Runtime" : "0.006",
             "Moo" : "0.009001",
+            "Parse::Path" : "0.90",
             "Try::Tiny" : "0.01",
             "Types::Standard" : "0.001",
             "namespace::clean" : "0.06",
@@ -53,7 +54,7 @@
    "provides" : {
       "Data::SplitSerializer" : {
          "file" : "lib/Data/SplitSerializer.pm",
-         "version" : "0.90"
+         "version" : "0.91"
       }
    },
    "release_status" : "stable",
@@ -69,7 +70,7 @@
       },
       "x_irc" : "irc://irc.perl.org/#web-simple"
    },
-   "version" : "0.90",
+   "version" : "0.91",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.014002"
@@ -369,6 +370,17 @@
             "class" : "Dist::Zilla::Plugin::Clean",
             "name" : "@Author::BBYRD/Clean",
             "version" : "0.07"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Prereqs",
+            "config" : {
+               "Dist::Zilla::Plugin::Prereqs" : {
+                  "phase" : "runtime",
+                  "type" : "requires"
+               }
+            },
+            "name" : "RuntimeRequires",
+            "version" : "4.300035"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",

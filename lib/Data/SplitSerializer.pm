@@ -1,6 +1,6 @@
 package Data::SplitSerializer;
 
-our $VERSION = '0.90'; # VERSION
+our $VERSION = '0.91'; # VERSION
 # ABSTRACT: Modules that "split serialize" data structures
 
 #############################################################################

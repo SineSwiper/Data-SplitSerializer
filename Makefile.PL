@@ -21,6 +21,7 @@ my %WriteMakefileArgs = (
     "Hash::Merge" => "0.11",
     "Module::Runtime" => "0.006",
     "Moo" => "0.009001",
+    "Parse::Path" => "0.90",
     "Try::Tiny" => "0.01",
     "Types::Standard" => "0.001",
     "namespace::clean" => "0.06",
@@ -32,7 +33,7 @@ my %WriteMakefileArgs = (
     "Test::More" => "0.94",
     "Test::Most" => "0.01"
   },
-  "VERSION" => "0.90",
+  "VERSION" => "0.91",
   "test" => {
     "TESTS" => "t/*.t"
   }
